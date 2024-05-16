@@ -50,13 +50,7 @@ class MainActivity : ComponentActivity() {
             LifeLogTheme(
                 darkTheme = false
             ) {
-                Column(modifier = Modifier.fillMaxSize()) {
-                    val viewModel: DiaryViewModel= koinViewModel()
-                    Button(onClick = { viewModel.insertHardcodedDiaryEntries() }) {
-                        Text(text = "Insert")
-                    }
-                    DairyEntries(viewModel)
-                }
+                MainScreen()
             }
         }
     }

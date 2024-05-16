@@ -71,6 +71,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.navigation.compose)
     implementation("io.insert-koin:koin-androidx-compose:3.5.6")
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
@@ -80,5 +81,6 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
 }

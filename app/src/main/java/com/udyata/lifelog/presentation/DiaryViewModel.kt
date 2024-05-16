@@ -46,37 +46,37 @@ class DiaryViewModel(
     }
 
 
-    private fun insertDiaryEntry(diaryEntry: DiaryEntry) {
-        viewModelScope.launch {
-            _operationState.value = RequestState.Loading
-            try {
-                val result = insertDiaryEntryUseCase.execute(diaryEntry)
-                _operationState.value = result
-                if (result is RequestState.Success) {
-                    fetchAllDiaryEntries()
-                    Timber.d(result.message ?: "Diary entry inserted successfully")
-                }
-            } catch (e: Exception) {
-                _operationState.value = RequestState.Error(e.message ?: "Unknown Error")
-            }
-        }
-    }
-
-    fun deleteDiaryEntry(diaryEntry: DiaryEntry) {
-        viewModelScope.launch {
-            _operationState.value = RequestState.Loading
-            try {
-                val result = deleteDiaryEntryUseCase.execute(diaryEntry)
-                _operationState.value = result
-                if (result is RequestState.Success) {
-                    fetchAllDiaryEntries()
-                    Timber.d(result.message ?: "Diary entry deleted successfully")
-                }
-            } catch (e: Exception) {
-                _operationState.value = RequestState.Error(e.message ?: "Unknown Error")
-            }
-        }
-    }
+//    private fun insertDiaryEntry(diaryEntry: DiaryEntry) {
+//        viewModelScope.launch {
+//            _operationState.value = RequestState.Loading
+//            try {
+//                val result = insertDiaryEntryUseCase.execute(diaryEntry)
+//                _operationState.value = result
+//                if (result is RequestState.Success) {
+//                    fetchAllDiaryEntries()
+//                    Timber.d(result.message ?: "Diary entry inserted successfully")
+//                }
+//            } catch (e: Exception) {
+//                _operationState.value = RequestState.Error(e.message ?: "Unknown Error")
+//            }
+//        }
+//    }
+//
+//    fun deleteDiaryEntry(diaryEntry: DiaryEntry) {
+//        viewModelScope.launch {
+//            _operationState.value = RequestState.Loading
+//            try {
+//                val result = deleteDiaryEntryUseCase.execute(diaryEntry)
+//                _operationState.value = result
+//                if (result is RequestState.Success) {
+//                    fetchAllDiaryEntries()
+//                    Timber.d(result.message ?: "Diary entry deleted successfully")
+//                }
+//            } catch (e: Exception) {
+//                _operationState.value = RequestState.Error(e.message ?: "Unknown Error")
+//            }
+//        }
+//    }
 
     fun onInsertDairyEvent(event: InsertDairyEntryEvent){
 
@@ -124,8 +124,8 @@ class DiaryViewModel(
             documentUri = "null"
         )
 
-        insertDiaryEntry(entry1)
-        insertDiaryEntry(entry2)
+//        insertDiaryEntry(entry1)
+//        insertDiaryEntry(entry2)
     }
 
 
