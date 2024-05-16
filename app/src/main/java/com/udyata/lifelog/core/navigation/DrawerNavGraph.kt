@@ -54,26 +54,31 @@ fun DrawerNavGraph(
                 )
             }
             composable(NavigationItem.Profile.route) {
-                val viewModel: DiaryViewModel= koinViewModel()
-                Scaffold (
-                    topBar = {
-                        TopAppBar(
-                            title = { Text(text = "Dairy") },
-                            navigationIcon = {
-                                IconButton(onClick = { onDrawerClick(drawerState.opposite()) }) {
-                                    Icon(
-                                        imageVector = Icons.Default.Menu,
-                                        contentDescription = "Dairy Icon"
-                                    )
-                                }
-                            }
-                        )
-                    }
-                ){
-                    Column(modifier = Modifier.fillMaxSize().padding(it)) {
-                        DairyEntries(viewModel)
-                    }
-                }
+                MainContent(
+                    drawerState = drawerState,
+                    onDrawerClick = onDrawerClick,
+                    route = "Profile"
+                )
+//                val viewModel: DiaryViewModel= koinViewModel()
+//                Scaffold (
+//                    topBar = {
+//                        TopAppBar(
+//                            title = { Text(text = "Dairy") },
+//                            navigationIcon = {
+//                                IconButton(onClick = { onDrawerClick(drawerState.opposite()) }) {
+//                                    Icon(
+//                                        imageVector = Icons.Default.Menu,
+//                                        contentDescription = "Dairy Icon"
+//                                    )
+//                                }
+//                            }
+//                        )
+//                    }
+//                ){
+//                    Column(modifier = Modifier.fillMaxSize().padding(it)) {
+//                        DairyEntries(viewModel)
+//                    }
+//                }
             }
             composable(NavigationItem.Premium.route) {
                 MainContent(
